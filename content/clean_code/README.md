@@ -1,13 +1,14 @@
-1 Código limpio (introducción)
+# Resumen por capítulos
+# 1 Código limpio (introducción)
 Poner etiqueta @author en javadoc (para que los demás sepan quién lo escribió).
 
 Sólo se escribe código el 10% del tiempo (10:1). El otro 90% se pasa leyendo código anterior, cambiando entre módulos, etc.
 
 Regla del Boy Scout: entregar el código más limpio de lo que lo hemos recibido.
 
-2 Nombres con sentido
+# 2 Nombres con sentido
 
-[2.1 Nombres que revelen las intenciones]
+## [2.1 Nombres que revelen las intenciones]
 Prestar atención a los nombres y cambiarlos cuando se encuentren otros mejores.
 Si un nombre requiere un comentario, es que no revela su cometido.
 
@@ -23,7 +24,7 @@ Evitar variaciones mínimas: dos nombres casi iguales en el mismo contexto, sobr
 Evitar l y O por su similitud a 1 y 0.
 
 
-[2.2 Distinciones entre nombres]
+## [2.2 Distinciones entre nombres]
 
 Usar nombres distintos si tienen significados diferentes. Ejemplo a evitar: a1, a2, …, aN como nombres de parámetros.
 
@@ -31,13 +32,13 @@ Evitar palabras adicionales para distinguir entre nombres. Ejemplo: product vs p
 
 Evitar palabras redundantes. Ej: ‘variable’ u ‘object’ en el nombre de una variable, ‘nameString’ (porque siempre ‘name’ es un string).
 
-[2.3 Que se puedan pronunciar]
+## [2.3 Que se puedan pronunciar]
 A evitar: genymdhms (gen year-month-day-hour-minute-second)
 
-[2.4 Que se puedan buscar]
+## [2.4 Que se puedan buscar]
 Si se va a usar en varios ámbitos, hay que evitar usar directamente los números de constantes (sustituir por nombres) o nombres de pocas letras. Excepción: si es de uso local.
 
-[2.5 Evitar nombres codificados]
+## [2.5 Evitar nombres codificados]
 Evitar usar abreviaturas, prefijos, sufijos con significado no estándar.
 
 [2.5.1 Evitar notación húngara (HN)]
