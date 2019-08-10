@@ -339,11 +339,11 @@ Usar las reglas de formato que decida el equipo.
 Usar interfaces. No mostrar detalles de na implementación ni de los datos (no poner cosas tipo `getInMeters()`, sino `getLength()` ).
 
 ## 6.2 Antisimetría de datos y objetos
-Datos: point rectangle, circule…
-Objetos: comportamiento (funciones) de los datos.
+* Datos: _point_, _rectangle_, _circule_…
+* Objetos: comportamiento (funciones) de los datos.
 
-Datos y objetos juntos: orientado a objetos.
-Datos y objetos separados: orientado a procedimientos.
+* Datos y objetos juntos: programación orientada a objetos (_OOP_).
+* Datos y objetos separados: programación orientada a procedimientos (_POP_).
 
 Si añadimos nuevas funciones:
 * _POP_: se modifica solo el objeto (poniendo un `switch` en la nueva función)
