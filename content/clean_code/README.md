@@ -1,4 +1,4 @@
-# Resumen por capítulos
+# Resumen por secciones
 # 1 Código limpio (introducción)
 Poner etiqueta @author en javadoc (para que los demás sepan quién lo escribió).
 
