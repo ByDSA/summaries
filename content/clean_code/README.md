@@ -569,3 +569,32 @@ Elegir nombres adecuados, reducir tamaño de funciones y clases, usar nomenclatu
 Reducir el número de clases y métodos, siempre que no entre en conflicto con las reglas anteriores (evitar llevarlas al extremo).
 
 # 13 Concurrencia
+
+## 13.1 ¿Por qué concurrencia?
+### 13.1.1 Mitos e imprecisiones
+
+## 13.2 Desafíos
+## 13.3 Principios de defensa de la concurrencia
+### 13.3.1 Principio de responsabilidad única (_SRP_)
+### 13.3.2 Corolario: Limitar el ámbito de los datos
+### 13.3.3 Corolario: Usar copias de datos
+### 13.3.4 Corolario: Los procesos deben ser independientes
+## 13.4 Conocer las bibliotecas
+### 13.4.1 Colecciones compatibles con procesos
+## 13.5 Conocer los modelos de ejecución
+### 13.5.1 Productor-Consumidor
+### 13.5.2 Lectores-Escritores
+### 13.5.3 La cena de los filósofos
+## 13.6 Dependencias entre métodos sincronizados
+## 13.7 Reducir el tamaño de las secciones sincronizadas
+## 13.8 Crear código de cierre correcto es complicado
+## 13.9 Probar código con procesos
+### 13.9.1 Considerar los fallos como posibles problemas de los procesos
+### 13.9.2 Conseguir que primero funcione el código sin procesos
+### 13.9.3 El código con procesos se debe poder conectar a otros elementos
+### 13.9.4 El código con procesos debe ser modificable
+### 13.9.5 Ejecutar con más procesos que procesadores
+### 13.9.6 Ejecutar en diferentes plataformas
+### 13.9.7 Diseñar el código para probar y forzar fallos
+### 13.9.8 Manual
+### 13.9.9 Automática
