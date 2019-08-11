@@ -502,16 +502,50 @@ No se pueden conseguir sistemas perfectos a la primera (porque cambian las neces
 ### 11.3.1 Aspectos transversales
 Usar capa de persistencia para que las modificaciones de comportamiento no sean invasivas en el código de destino.
 ## 11.4 Proxies de Java
+Los proxies JDK utilizan mucho código hasta para casos sencillos. Dificulta la creación de código limpio. No ofrecen un mecanismo para especificar puntos de ejecución globales del sistema (los AOP, sí).
+
+POJO: Plain-Old Java Object (objeto sencillo de Java)
 
 ## 11.5 Estructuras AOP Java puras
+Usadas en Spring AOP y JBoss AOP.
+
+DAO: Data Accessor Object (objeto de acceso de datos).
 
 ### 11.5.1 Aspectos de AspectJ
+AOP sirve para el 80-90% de los casos. Para casos más avanzados: AspectJ.
 
 ## 11.6 Pruebas de unidad de la arquitectura del sistema
+Una arquitectura de sistema óptima se compone de dominios de aspectos modularizados, cada uno con POJO. Los dominios se integran mediante aspectos/herramientas similares mínimamente invasivas. Se le pueden realizar pruebas igual que en el código.
 
 ## 11.7 Optimizar la toma de decisiones
+Posponer las decisiones hasta el último momento: para tener más información.
 
 ## 11.8 Usar estándares cuando añadan un valor demostrable
+Usar estándares (reutilización, más fácil que hayan expertos, etc.), pero tampoco obsesionarse. No hay que perder de vista el objetivo.
 
-## 11.9 Los sistemas necesitan lenguajes específicos del dominio
+## 11.9 Los sistemas necesitan lenguajes específicos del dominio (DSL)
+DSL: Domain-Specific Languages.
+Lenguajes de programación o modelado específicos de un dominio. Permite expresar todos los niveles de abstracción de un dominio.
+Dirigidos a expertos en el dominio.
+
+Son todo lo contrario a lenguajes de programación (C++/Java) o de modelado (UML) de carácter general 
+
+Ej: Game Maker Language (GML), UnrealScripts.
+
+# 12 Emergencia
+## 12.1 Limpieza a través de diseños emergentes
+Reglas de Kent Bleck de diseño sencillo:
+* Ejecutar todas las pruebas.
+* No contener duplicados.
+* Expresar la intención del programador.
+* Minimizar el número de clases y métodos.
+
+Facilita aplicar principios _SRP_ y _DIP_.
+
+## 12.2 Primera regla del diseño sencillo: Ejecutar todas las pruebas.
+## 12.3 Reglas 2 a 4 del diseño sencillo: Refactorizar
+## 12.4 Eliminar duplicados
+## 12.5 Expresividad
+## 12.6 Clases y métodos mínimos
+
 
