@@ -451,11 +451,11 @@ Intentar usar el menor número de _assert_ en los tests (idealmente sólo uno)
 ### 9.4.1 Un solo concepto por prueba
 Un solo concepto por prueba.
 ## 9.5 F.I.R.S.T.
--(_**F**ast_)Rapidez: deben ejecutarse rápidamente (si no, no se ejecutarán con frecuencia)
--(_**I**ndependent_)Independencia: no deben depender entre ellas (dificultaría diagnóstico y ocultaría errores posteriores).
--(_Repeteable_)Repetición: deben poder hacerse en cualquier entorno.
--(_**S**elf-Validating_)Validación automática: las pruebas deben tener un resultado booleano (aciertan o fallan) (si no, en resultado puede ser subjetivo y la comprobación, manual).
--(_**T**imely_)Puntualidad: crearlas antes del código de producción (si no, puede parecer demasiado difícil de hacer las pruebas y no hacerlas).
+* (_**F**ast_)Rapidez: deben ejecutarse rápidamente (si no, no se ejecutarán con frecuencia)
+* (_**I**ndependent_)Independencia: no deben depender entre ellas (dificultaría diagnóstico y ocultaría errores posteriores).
+* (_Repeteable_)Repetición: deben poder hacerse en cualquier entorno.
+* (_**S**elf-Validating_)Validación automática: las pruebas deben tener un resultado booleano (aciertan o fallan) (si no, en resultado puede ser subjetivo y la comprobación, manual).
+* (_**T**imely_)Puntualidad: crearlas antes del código de producción (si no, puede parecer demasiado difícil de hacer las pruebas y no hacerlas).
 
 # 10 Clases
 ## 10.1 Organización de clases
@@ -501,17 +501,17 @@ En inyección de dependencias, se debe delegar a otro objeto la instanciación d
 No se pueden conseguir sistemas perfectos a la primera (porque cambian las necesidades).
 ### 11.3.1 Aspectos transversales
 Usar capa de persistencia para que las modificaciones de comportamiento no sean invasivas en el código de destino.
-## [11.4 Proxies de Java]
+## 11.4 Proxies de Java
 
-## [11.5 Estructuras AOP Java puras]
+## 11.5 Estructuras AOP Java puras
 
-### [11.5.1 Aspectos de AspectJ]
+### 11.5.1 Aspectos de AspectJ
 
-## [11.6 Pruebas de unidad de la arquitectura del sistema]
+## 11.6 Pruebas de unidad de la arquitectura del sistema
 
-## [11.7 Optimizar la toma de decisiones]
+## 11.7 Optimizar la toma de decisiones
 
-## [11.8 Usar estándares cuando añadan un valor demostrable]
+## 11.8 Usar estándares cuando añadan un valor demostrable
 
-## [11.9 Los sistemas necesitan lenguajes específicos del dominio]
+## 11.9 Los sistemas necesitan lenguajes específicos del dominio
 
