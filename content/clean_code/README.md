@@ -1,10 +1,10 @@
 # Resumen por secciones
 # 1 Código limpio (introducción)
-Poner etiqueta @author en javadoc (para que los demás sepan quién lo escribió).
+Poner etiqueta `@author` en javadoc (para que los demás sepan quién lo escribió).
 
 Sólo se escribe código el 10% del tiempo (10:1). El otro 90% se pasa leyendo código anterior, cambiando entre módulos, etc.
 
-Regla del Boy Scout: entregar el código más limpio de lo que lo hemos recibido.
+**Regla del Boy Scout**: entregar el código más limpio de lo que lo hemos recibido.
 
 # 2 Nombres con sentido
 
@@ -28,7 +28,7 @@ Evitar _l_ y _O_ por su similitud a _1_ y _0_.
 
 Usar nombres distintos si tienen significados diferentes. Ejemplo a evitar: `a1`, `a2`, …, `aN` como nombres de parámetros.
 
-Evitar palabras adicionales para distinguir entre nombres. Ejemplo: `product` vs `productInfo`, `-info`, `-Data`, `a-`, `an-`, `the-`.
+Evitar palabras adicionales para distinguir entre nombres. Ej: `product` vs `productInfo`, `-info`, `-Data`, `a-`, `an-`, `the-`.
 
 Evitar palabras redundantes. Ej: `variable` u `object` en el nombre de una variable, `nameString` (porque siempre `name` es un string).
 
@@ -107,12 +107,12 @@ No añadir prefijos/sufijos/interfijos de contexto si ya está contextualizado e
 # 3 Funciones
 
 ## 3.1 Tamaño reducido
-Unas 20 líneas si no pueden reducirse más los niveles de abstracción.
+Unas **20 líneas** si no pueden reducirse más los niveles de abstracción.
 
-Cada línea de 150 carácteres como máximo.
+Cada línea de **150 carácteres** como máximo.
 
 ### 3.1.1 Bloques y sangrado
-Las funciones `if`, `else` y `while` con sólo una línea.
+Las funciones `if`, `else` y `while` deben tener cuerpo de sólo una línea.
 
 ## 3.2 Hacer una cosa
 Las funciones sólo deben hacer una cosa.
@@ -139,15 +139,15 @@ Mejor extenso y descriptivo que breve y enigmático.
 ## 3.6 Argumentos de funciones
 Los argumentos dificultan la lectura y obligan a conocer más el contexto y los niveles de abstracción hacia abajo.
 
-Usar el menor número de argumentos posible; como máximo 2.
+Usar el menor número de argumentos posible; como **máximo 2** (salvo caso justificado).
 
 Si hay pocos argumentos, se facilita hacer las pruebas (hay menos casos que probar).
 
 ### 3.6.1 Formas monádicas habituales
 Usos de funciones con sólo un argumento:
-1. Pregunta sobre el argumento. Ej: `boolean fileExists(“MyFile”)`.
-1. Transforma el argumento en otra cosa y la devuelve. Ej: `InputStream fileOpen(“MyFile”)`
-1. Eventos que cambian el estado del sistema. Ej: `void passwordAttemptFailedNtimes(int attempts)`.
+* Pregunta sobre el argumento. Ej: `boolean fileExists(“MyFile”)`.
+* Transforma el argumento en otra cosa y la devuelve. Ej: `InputStream fileOpen(“MyFile”)`
+* Eventos que cambian el estado del sistema. Ej: `void passwordAttemptFailedNtimes(int attempts)`.
 
 ### 3.6.2 Argumentos de indicador
 Evitar usar argumentos boolean.
@@ -157,9 +157,9 @@ A veces es confuso saber cuál es la diferencia entre el primer y segundo parám
 Convertir en monádicas si se puede.
 
 ### 3.6.4 Triadas
-Desaconsejado.
+Desaconsejado, salvo caso justificado.
 
-Caso justificado para usar tres argumentos: comparaciones de float. Ej: `assertEquals(1.0, amount, .001)`
+Ejemplo de caso justificado: comparaciones de float. Ej: `assertEquals(1.0, amount, .001)`
 
 ### 3.6.5 Objeto de argumento
 Si se pasan muchos argumentos, quizá se puede hacer una abstracción. Ej: `makeCircle(x, y, radius)` -> `makeCircle(Point center, radius)`
@@ -223,7 +223,7 @@ Riesgo: que los comentarios sean incorrectos.
 ### 4.2.5 Advertir de las consecuencias
 Ej: “no ejecutar si no se tiene tiempo porque es lento”
 
-### 4.2.6 Comentarios TODO
+### 4.2.6 Comentarios `TODO`
 Permitidos. Cosas a hacer en el futuro.
 
 ### 4.2.7 Amplificación
@@ -283,7 +283,7 @@ Evitar.
 ## 5.1 La función del formato
 []
 ## 5.2 Formato vertical
-Archivos normales entre 200 y 500 líneas. Los archivos de pequeño tamaño se entienden mejor.
+Archivos normales **200-500 líneas**. Los archivos de pequeño tamaño se entienden mejor.
 
 ### 5.2.1 La metáfora del periódico
 Arriba lo más importante.
@@ -314,7 +314,7 @@ Las cosas afines deben estar próximas.
 Como [5.2.1] y [5.2.4.3].
 
 ## 5.3 Formato horizontal
-Máximo 80-120 carácteres por línea.
+Máximo **80-120 carácteres por línea**.
 
 ### 5.3.1 Apertura y densidad horizontal
 Espacio en operadores binarios (excepto en multiplicaciones o divisiones internas).
@@ -342,15 +342,15 @@ Usar interfaces. No mostrar detalles de na implementación ni de los datos (no p
 * Datos: _point_, _rectangle_, _circule_…
 * Objetos: comportamiento (funciones) de los datos.
 
-* Datos y objetos juntos: programación orientada a objetos (_OOP_).
-* Datos y objetos separados: programación orientada a procedimientos (_POP_).
+* Datos y objetos juntos: programación orientada a objetos (_OOP_, _**O**bject-**o**riented **P**rogramming_).
+* Datos y objetos separados: programación orientada a procedimientos (_POP_, **P**rocedure-**o**riented **P**rogramming).
 
-Si añadimos nuevas funciones:
-* _POP_: se modifica solo el objeto (poniendo un `switch` en la nueva función)
+Al añadir nuevas funciones:
+* _POP_: se modifica solo el objeto (poniendo un `switch` según el tipo de dato en la nueva función)
 * _OOP_: hay que cambiar todas las clases de datos usando polimorfismo.
 
-Si añadimos nuevos datos:
-* _POP_: hay que cambiar todas las funciones para añadir los nuevos tipo de datos.
+Al añadir nuevos tipos de datos:
+* _POP_: hay que cambiar todas las funciones para añadir qué hacer en caso de los nuevos tipo de datos.
 * _OOP_: se implementan las funciones en el nuevo tipo sin modificar el resto de funciones.
 
 ## 6.3 La ley de Demeter
