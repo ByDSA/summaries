@@ -634,12 +634,25 @@ Soluciones:
 * El portero del comedor: se limita el número de procesos que pedirán recursos, limitando a (n-1); así seguro al menos un proceso podrá usar dos recursos.
 ## 13.6 Dependencias entre métodos sincronizados
 Evitar usar más de un método en un objeto compartido. Pero si hay que hacerlo, hay tres formas:
-* Bloqueo basado en clientes:
+* Bloqueo basado en clientes: el cliente debe bloquear al servidor antes de invocar el primer método y asegurarse que en el bloque se invoque al último método que lo desbloquee.
+* Bloqueo basado en servidores: crear un método en el servidor que lo bloquee, invocar todos los métodos y después anule el bloqueo; el cliente debe invocar el método del servidor.
+* Servidor adaptado: crear un subservidor intermediario que realice el bloque. Para cuando el servidor original no se puede modificar.
 ## 13.7 Reducir el tamaño de las secciones sincronizadas
+Reducir al máximo las secciones `synchronized` (para bloquear el menor tiempo posible y minimizar problemas).
 ## 13.8 Crear código de cierre correcto es complicado
+Planificar con antelación el proceso de cierre para evitar bloqueos. Probarlo hasta que funcione. Es complicado.
+
 ## 13.9 Probar código con procesos
+Las pruebas no garantizan su corrección, pero pueden minimizar los riesgos si se hacen bien.
+
+Ejecutar con más procesos que procesadores. Ejecutar en diferentes plataformas. Intentar forzar fallos.
+
 ### 13.9.1 Considerar los fallos como posibles problemas de los procesos
+Los problemas con procesos pueden mostar sus síntomas cada miles o millones de ejecuciones. No ignorar estos fallos.
+
 ### 13.9.2 Conseguir que primero funcione el código sin procesos
+Conseguir primero que el código sin procesos se ejecute. No intentar identificar fallos de procesos y de no-procesos simultáneamente.
+
 ### 13.9.3 El código con procesos se debe poder conectar a otros elementos
 ### 13.9.4 El código con procesos debe ser modificable
 ### 13.9.5 Ejecutar con más procesos que procesadores
