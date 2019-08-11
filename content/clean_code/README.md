@@ -619,9 +619,22 @@ Cocneptos:
 * Bloqueo: dos o más procesos esperan a que ambos terminen y no pueden terminar hasta que obtenga el otro recurso.
 * Bloqueo activo: procesos bloqueados, intentando realizar su labor pero estorbándose unos a otros.
 ### 13.5.1 Productor-Consumidor
+Los procesos productores crean trabajo y lo añaden a un buffer/cola. Los consumidores adquieren dicho trabajo de la cola y lo completan.
+
+Cuando un consumidor termina de consumir, envía una señal de que los productores de que la cola no está llena y pueden producir. Cuando un productor produce, envía una señal de que la cola no está vacía y los consumidores pueden consumir.
 ### 13.5.2 Lectores-Escritores
+Los escritores escriben sobre un recurso y los lectores lo leen. Si los escritores son bloqueados hasta que no haya ningún lector pero es un recurso concurrido, tendrán inanición los escritores. Si los lectores son bloqueados hasta que no haya ningún escritor escribiendo pero hay muchos escritores, tendrán inanición los lectores. Es un reto encontrar el equilibrio.
 ### 13.5.3 La cena de los filósofos
+Varios procesos compitiendo por recursos limitados.
+Soluciones:
+* Por turnos cíclico: se pregunta por orden si quieren usar el recurso. Contra: si hay muchos procesos, puede haber inanición.
+* Varios turnos: los turnos no son en orden y se asignan en función de lo que tardan en volver a tener hambre.
+* Colas de tenedores: Los procesos se ponen a la cola para usar los recursos. Si sólo tienen bajo su control uno de los recursos que necesitan y no el resto (que a su vez lo tiene bajo control otro proceso que espera el recurso del primer proceso), se produce bloqueo mutuo.
+* Resolución de conflictos en colas de tenedores: se establece un tiempo de espera aleatorio para tener todos los recursos que necesita para funcionar, pero si no los tiene en ese tiempo, se liberan.
+* El portero del comedor: se limita el número de procesos que pedirán recursos, limitando a (n-1); así seguro al menos un proceso podrá usar dos recursos.
 ## 13.6 Dependencias entre métodos sincronizados
+Evitar usar más de un método en un objeto compartido. Pero si hay que hacerlo, hay tres formas:
+* Bloqueo basado en clientes:
 ## 13.7 Reducir el tamaño de las secciones sincronizadas
 ## 13.8 Crear código de cierre correcto es complicado
 ## 13.9 Probar código con procesos
