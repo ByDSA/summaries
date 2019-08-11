@@ -543,9 +543,29 @@ Reglas de Kent Bleck de diseño sencillo:
 Facilita aplicar principios _SRP_ y _DIP_.
 
 ## 12.2 Primera regla del diseño sencillo: Ejecutar todas las pruebas.
+Todo diseño necesita una forma sencilla de comprobar que realmente funciona: sistema testable. Por tanto, la creación de pruebas conduce a obtener mejores diseños.
+
 ## 12.3 Reglas 2 a 4 del diseño sencillo: Refactorizar
+Tras crear las pruebas, refactorizamos. Volvemos a ejecutar las pruebas con frecuencia al limpiar el código.
+Dentro de la refactorización:
+* Aumentar la cohesión.
+* Recucir las conexiones.
+* Separar las preocupaciones.
+* Modularizar aspectos del sistema.
+* Reducir el tamaño de funciones y clases.
+* Elegir nombres adecuados.
+* Eliminar duplicados [12.4].
+* Garantizar la capacidad de expresión [12.5].
+* Minimizar el número de clases y métodos [12.6].
 ## 12.4 Eliminar duplicados
+Eliminar código duplicado (aumentar dependencia de funciones del programa). Ej: hacer que `isEmpty()` dependa de `size()`.
+
 ## 12.5 Expresividad
+Al aumentar la complejidad del sistema, el programador necesita más tiempo para entenderlo y aumentan las posibilidades de error.
+
+Elegir nombres adecuados, reducir tamaño de funciones y clases, usar nomenclatura estándar (ej: añadir nombre de patrón estádar como `-Command` o `-Visitor` en clases que implementan dichos patrones). Las pruebas también ayudan a entender lo que hace una clase.
+
 ## 12.6 Clases y métodos mínimos
+Reducir el número de clases y métodos, siempre que no entre en conflicto con las reglas anteriores (evitar llevarlas al extremo).
 
-
+# 13 Concurrencia
