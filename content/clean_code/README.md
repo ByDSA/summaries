@@ -571,17 +571,53 @@ Reducir el número de clases y métodos, siempre que no entre en conflicto con l
 # 13 Concurrencia
 
 ## 13.1 ¿Por qué concurrencia?
+La desvinculación qué-cuándo puede mejorar considerablemente el redimiento.
 ### 13.1.1 Mitos e imprecisiones
+* **La concurrencia siempre mejora el rendimiento**: depende de si se puede compartir tiempo entre varios procesos o procesadores.
+* **El diseño no cambia al crear programar concurrentes**: pueden ser muy diferentes.
+* **No es importante entender los problemas de concurrencia al trabajar con un contenedor web o EJB**: hay que protegerlos de problemas de actualización concurrente y bloqueo.
+
+
+La concurrencia genera cierta sobrecarga (en rendimiento y código)
+Los errores de concurrencia no suelen ser siempre los mismos (por eso tienden a ignorarse).
 
 ## 13.2 Desafíos
+Para definir las posibles rutas (algunas de ellas generan resultados incorrectos), hay que entender lo que hace el compilador con el _bytecode_ y lo que considera Java atómico.
+
 ## 13.3 Principios de defensa de la concurrencia
+Técnicas para protegerse de problemas de código concurrente:
 ### 13.3.1 Principio de responsabilidad única (_SRP_)
+Separar el código de concurrencia del resto del código.
+
 ### 13.3.2 Corolario: Limitar el ámbito de los datos
+Encapsular el acceso a datos, internamente con `synchronized`. Al estar encapsulado, hay menos riesgo de que se nos olvide poner la sección `synchronized` a una variable.
+
+Reducir el acceso a datos compartidos.
+
 ### 13.3.3 Corolario: Usar copias de datos
+Usar copias para datos de sólo lectura para evitar secciones `synchronized`.
+
+Si conviene o no copiar los datos en términos de eficiencia, depende de cada caso.
 ### 13.3.4 Corolario: Los procesos deben ser independientes
+Dividir los datos en subconjuntos independientes. Ej: las llamadas a HttpServlet son independientes si sólo usan variables locales.
 ## 13.4 Conocer las bibliotecas
+Java 5 trae muchas mejoras.
 ### 13.4.1 Colecciones compatibles con procesos
+`ConcurrentHashMap` tiene mejor rendimiento en la mayoría de casos que `HashMap`.
+
+Clases a conocer:
+* `ReentrantLock`: bloqueo que se puede adquirir en un método y liberar en otro.
+* `Semaphore`: una implementación del cásico semáforo, un bloqueo con un contador.
+* `CountDownLatch`: bloqueo que espera un número de eventos antes de liberar todos los subprocesos retenidos. Así, todos tienen la misma oportunidad de iniciarse al mismo tiempo.
+* Otras: `java.util.concurrent`, `java.util.concurrent.atomic`, `java.util.concurrent.locks`.
+
 ## 13.5 Conocer los modelos de ejecución
+Cocneptos:
+* Recursos vinculados: recursos de tamaño fijo usados en un entorno concurrente. Ej: conexiones a BD, buffer de escritura/lectura.
+* Exclusión mutua: sólo un proceso puede acceder a un recurso compartido a la vez.
+* Inanición: Se impide que un proceso o grupo de procesos continúen demasiado tiempo.
+* Bloqueo: dos o más procesos esperan a que ambos terminen y no pueden terminar hasta que obtenga el otro recurso.
+* Bloqueo activo: procesos bloqueados, intentando realizar su labor pero estorbándose unos a otros.
 ### 13.5.1 Productor-Consumidor
 ### 13.5.2 Lectores-Escritores
 ### 13.5.3 La cena de los filósofos
