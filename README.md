@@ -1,3 +1,6 @@
-# Resúmenes
-Resúmenes en castellano de diferentes libros relacionados con la programación.
-# Índice
+# ResÃºmenes
+ResÃºmenes en castellano de diferentes libros relacionados con la programaciÃ³n.
+# Ãndice
+## Clean Code
+* [Por secciones](content/clean_code)
+* [General]()
