@@ -654,9 +654,22 @@ Los problemas con procesos pueden mostar sus síntomas cada miles o millones de 
 Conseguir primero que el código sin procesos se ejecute. No intentar identificar fallos de procesos y de no-procesos simultáneamente.
 
 ### 13.9.3 El código con procesos se debe poder conectar a otros elementos
+Se debe poder ejecutar con diferentes configuraciones:
+* En un proceso o varios, y que esta configuración se pueda cambiar durante la ejecución
+* En modo 'prueba' o modo 'real'
+* Con pruebas dobles ejecutadas de forma rápida, lenta y variable.
+* Configurar pruebas que ejecutar en diferentes iteraciones.
+
 ### 13.9.4 El código con procesos debe ser modificable
+Que se pueda adaptar la configuración para maximizar rendimiento en tiempo de ejecución.
+
 ### 13.9.5 Ejecutar con más procesos que procesadores
+Ejecutar con más procesos que procesadores. Aumenta la frecuencia de cambio de tareas y se reduce la probabilidad de que hayan secciones críticas y de bloqueos.
+
 ### 13.9.6 Ejecutar en diferentes plataformas
+Ejeutar el código con procesos en todas las plataformas de destino con frecuencia y desde fases iniciales. El código con procesos múltiples se comporta de forma distinta en cada entorno.
 ### 13.9.7 Diseñar el código para probar y forzar fallos
+En el código de procesos es difícil detectar fallos, suelen ser son aleatorios. Aumentar la probabilidad de que aparezcan con:
+* `Object.wait()`
 ### 13.9.8 Manual
 ### 13.9.9 Automática
