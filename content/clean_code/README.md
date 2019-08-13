@@ -1,6 +1,6 @@
 # Resumen por secciones
-# 1 Código limpio (introducción)
-Poner etiqueta `@author` en javadoc (para que los demás sepan quién lo escribió).
+# 1 Código limpio
+Poner etiqueta `@author` cuando se use javadoc (para que los demás sepan quién lo escribió).
 
 Sólo se escribe código el 10% del tiempo (10:1). El otro 90% se pasa leyendo código anterior, cambiando entre módulos, etc.
 
@@ -671,5 +671,13 @@ Ejeutar el código con procesos en todas las plataformas de destino con frecuenc
 ### 13.9.7 Diseñar el código para probar y forzar fallos
 En el código de procesos es difícil detectar fallos, suelen ser son aleatorios. Aumentar la probabilidad de que aparezcan con:
 * `Object.wait()`
+* `Object.sleep()`
+* `Object.yield()`: pausa el thread temporalmente permitiendo que se ejecuten otros threads.
+* `Object.priority()`
+
+Dos formas: manual y automática.
+
 ### 13.9.8 Manual
+Se puede usar `yield` en momentos elegidos manualmente y si falla, es que el código está mal. Evitar usarlo en producción (ralentiza el código).
 ### 13.9.9 Automática
+Intercalar de forma aleatoria en jigglePoint entre hacer `yield`/`sleep`/nada, ejecutando muchas veces (miles de veces) las pruebas.
